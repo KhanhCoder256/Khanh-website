@@ -11,6 +11,12 @@ body
   font-family: "Poppins" , sans-serif;
 }
 
+body ,html
+{
+  margin: 0px;
+  height: 100%;
+  overflow-y: hidden;
+}
 html
 {
   background: url('https://imgt.taimienphi.vn/cf/Images/np/2021/12/29/hinh-nen-tet-2022-3.jpg');
