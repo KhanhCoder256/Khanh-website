@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap')
+body
+{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins" , sans-serif;
+}
+
+html
+{
+  background: url('https://imgt.taimienphi.vn/cf/Images/np/2021/12/29/hinh-nen-tet-2022-3.jpg');
+  background-size: cover;
+  background-repeat:no-repeat;
+}
+
+.music 
+{
+    color:#E91E63;
+}
+
+.music2
+{
+    font-size: 16px;
+    color: #E91E63;
+}
+
+.center
+{
+  position: relative;
+  left: 400px;
+  top: -100px;
+  width: 400px;
+}
+.center div
+{
+  position: relative;
+  height: 100px;
+  margin: -30px 0;
+  z-index: 2;
+  transform: skewY(-5deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center div:nth-child(2),
+.center div:nth-child(4)
+{
+  transform: skewY(14.5deg);
+  z-index: 1;
+}
+
+.center div:before
+{
+  content: '';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.center div:nth-child(1):before,
+.center div:nth-child(3):before
+{
+  background: linear-gradient(-160deg, #E91E63, #FFC107);
+  transform: scaleX(0);
+}
+.center div:nth-child(2):before,
+.center div:nth-child(4):before
+{
+  background: linear-gradient(-20deg, #E91E63, #FFEB3B);
+  transform: scaleX(0);
+}
+
+.center div:nth-child(1):before
+{
+  animation: animate 1s linear forwards;
+  transform-origin: right;
+  animation-delay: 12s;
+}
+.center div:nth-child(2):before
+{
+  animation: animate 1s linear forwards;
+  transform-origin: left;
+  animation-delay: 13s;
+}
+.center div:nth-child(3):before
+{
+  animation: animate 1s linear forwards;
+  transform-origin: right;
+  animation-delay: 14s;
+}
+
+
+@keyframes animate
+{
+  0%
+  {
+    transform: scaleX(0);
+  }
+  100%
+  {
+    transform: scaleX(1);
+  }
+}
+
+.center div:nth-child(1):after,
+.center div:nth-child(3):after
+{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255,255,255,.2);
+}
+
+.loading h2
+{
+  color: #000000;
+}
+
+.center div h2
+{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index:10;
+  opacity: 0;
+  color: #FF0000;
+}
+
+
+.center div:nth-child(1) h2
+{
+  animation: fadeText 0.5s linear forwards;
+  animation-delay: 13s;
+  font-size: 30px;
+}
+.center div:nth-child(3) h2
+{
+  animation: fadeText 0.5s linear forwards;
+  animation-delay: 15s;
+  font-size: 90px;
+  font-weight: 800;
+}
+@keyframes fadeText
+{
+  0%
+  {
+    opacity: 0;
+  }
+  100%
+  {
+    opacity: 1;
+  }
+}
+
+.loading
+{ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  animation: fadeout 11s linear forwards;
+}
+
+@keyframes fadeout
+{
+  0%,91%
+  {
+    opacity: 1;
+    visibility: visible;
+  }
+  100%
+  {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+.loading .bar
+{
+  position: relarive;
+  width: 400px;
+  height: 40px;
+  background: transpert;
+  margin: 0 20px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+}
+.loading .bar:before
+{
+  content: '';
+  position: absolute;
+  top: 5;
+  left: 5;
+  width: 29%;
+  height: 55%;
+  background: #000000;
+  transform-origin: left;
+  animation:animate 10s linear forwards;
+  
+}
+.loading .bar:after
+{
+  content: 'Loading...';
+  position: absolute;
+  top: 5;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+  line-height: 36px;
+  color: #ffffff;
+  font-size: 20px;
+  mix-blend-mode: difference;
+}
